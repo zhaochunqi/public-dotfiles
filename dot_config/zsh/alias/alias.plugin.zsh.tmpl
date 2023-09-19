@@ -1,0 +1,26 @@
+{{- if (and (hasKey .chezmoi.osRelease "name") (eq .chezmoi.osRelease.name "NixOS")) }}
+alias logseq_sync="NOTES_FOLDER={{ .chezmoi.homeDir }}/ghq/github.com/zhaochunqi/MyLifeRecorded {{ .chezmoi.homeDir }}/ghq/github.com/zhaochunqi/MyScripts/bashscript/2-git-sync.sh"
+alias open="xdg-open"
+{{- end }}
+{{- if eq .chezmoi.os "linux" }}
+{{-   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
+alias logseq_sync="NOTES_FOLDER=/mnt/c/Users/zhaoc/Documents/MyLifeRecorded /home/zhaochunqi/ghq/github.com/zhaochunqi/MyScripts/bashscript/2-git-sync.sh"
+alias open="explorer.exe"
+{{-   end }}
+{{- end }}
+
+{{- if eq .chezmoi.os "darwin" }}
+alias logseq_sync="NOTES_FOLDER={{.chezmoi.homeDir }}/ghq/github.com/zhaochunqi/MyLifeRecorded {{ .chezmoi.homeDir }}/ghq/github.com/zhaochunqi/MyScripts/bashscript/2-git-sync.sh"
+{{- end }}
+
+if [[ "$TERM" =~ ^kitty && -z "$ZELLIJ_SESSION_NAME" ]]; then 
+    ssh() { 
+        kitty +kitten ssh "$@" 
+    } 
+fi
+
+alias k=kubectl
+alias kx=kubectx
+
+# yt-dlp
+alias yt="yt-dlp"

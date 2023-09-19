@@ -1,0 +1,187 @@
+{ config, pkgs, ... }:
+
+{
+  # Home Manager needs a bit of information about you and the paths it should
+  # manage.
+  home.username = "{{ .chezmoi.username }}";
+  home.homeDirectory = "{{ .chezmoi.homeDir }}";
+
+  # This value determines the Home Manager release that your configuration is
+  # compatible with. This helps avoid breakage when a new Home Manager release
+  # introduces backwards incompatible changes.
+  #
+  # You should not change this value, even if you update Home Manager. If you do
+  # want to update the value, then make sure to first check the Home Manager
+  # release notes.
+  home.stateVersion = "22.11"; # Please read the comment before changing.
+
+  # The home.packages option allows you to install Nix packages into your
+  # environment.
+  home.packages = [
+    # basic
+    pkgs.git
+
+    # password
+    pkgs.rbw
+    pkgs.pinentry
+
+    pkgs.lf
+
+    # this is for video preview in lf
+    pkgs.ffmpegthumbnailer
+    pkgs.coreutils
+    pkgs.pistol
+
+
+    pkgs.chezmoi
+
+    # for helix
+    pkgs.helix
+    pkgs.rnix-lsp
+    pkgs.nil
+
+    pkgs.neovim
+    pkgs.unzip
+    pkgs.file
+
+    pkgs.wget
+    pkgs.autojump
+    pkgs.peco
+    pkgs.zsh
+    pkgs.exa
+    pkgs.atuin
+    pkgs.ghq
+    pkgs.bat
+
+    # pkgs.ripgrep
+    # pkgs.ripgrep-all
+    pkgs.gh
+    pkgs.tldr
+    pkgs.tmux
+    pkgs.viddy
+    pkgs.delta
+    pkgs.git-lfs
+    pkgs.jq
+
+    # Needed by astrovim
+    pkgs.tree-sitter
+    pkgs.gdu
+    pkgs.bottom
+
+    # Luna Vim Dependencies
+    # pkgs.nodejs
+    # pkgs.nodePackages.pnpm
+    # pkgs.nodePackages.neovim
+    pkgs.cargo
+    pkgs.gcc
+
+    # Python
+    # pkgs.pipenv
+    # pkgs.rye
+
+    # Terraform
+    pkgs.terragrunt
+    pkgs.terraform
+    pkgs.terraform-ls
+    pkgs.tfsec
+    pkgs.tflint
+    pkgs.infracost
+    pkgs.pre-commit
+    pkgs.checkov
+    pkgs.terraform-docs
+    pkgs.terrascan
+    pkgs.tfupdate
+    pkgs.hcledit
+
+    # AWS
+    # pkgs.awscli
+    pkgs.awscli2
+
+    # Lua
+    pkgs.lua
+
+    # PHP
+    pkgs.php
+
+    # Disable it because it not support M1
+    # pkgs.xdg-user-dirs
+
+    # For kitty
+    pkgs.imagemagick
+
+    # Containers
+    pkgs.skopeo
+    pkgs.docker-compose
+
+    # Lazy
+    pkgs.lazygit
+    pkgs.lazydocker
+
+    # Coding
+    pkgs.go
+
+    # Nix
+    pkgs.nixpkgs-fmt
+
+    pkgs.ansible
+
+    # shell record
+    pkgs.asciinema
+
+    pkgs.zellij
+
+    # needed by nvim 
+    pkgs.fd
+
+    # p7zip
+    pkgs.p7zip
+
+    # k8s
+    pkgs.kubectl
+    pkgs.kubectx
+    # pkgs.kubernetes-helm
+
+    pkgs.nixfmt
+
+    # youtube
+    pkgs.yt-dlp
+  ];
+
+  programs.starship = { enable = true; };
+  programs.direnv = { enable = true; };
+
+  # Home Manager is pretty good at managing dotfiles. The primary way to manage
+  # plain files is through 'home.file'.
+  home.file = {
+    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
+    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
+    # # symlink to the Nix store copy.
+    # ".screenrc".source = dotfiles/screenrc;
+
+    # # You can also set the file content immediately.
+    # ".gradle/gradle.properties".text = ''
+    #   org.gradle.console=verbose
+    #   org.gradle.daemon.idletimeout=3600000
+    # '';
+  };
+
+  # You can also manage environment variables but you will have to manually
+  # source
+  #
+  #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
+  #
+  # or
+  #
+  #  /etc/profiles/per-user/zhaochunqi/etc/profile.d/hm-session-vars.sh
+  #
+  # if you don't want to manage your shell through Home Manager.
+  home.sessionVariables = {
+    # EDITOR = "emacs";
+  };
+
+
+
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
+}
+

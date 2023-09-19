@@ -1,0 +1,8 @@
+{{ if ne .chezmoi.os "windows" -}}
+#!/bin/sh
+
+# dot_config/bat/config hash: {{ include "dot_config/bat/config" | sha256sum }}
+echo "Building bat binary cache to use custom theme"
+bat cache --build
+echo "Done building !"
+{{ end -}}

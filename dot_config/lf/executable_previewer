@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+CACHEDIR="${XDG_CACHE_HOME:-$HOME/.cache}/lf"
+CACHE="$CACHEDIR/thumbnail.$(stat --printf '%n\0%i\0%F\0%s\0%W\0%Y' -- "$(readlink -f "$1")" | sha256sum | awk '{print $1}')"
+
+filetype="$(file -Lb --mime-type "$1")"
+
+function image() {
+  if hash kitty 2>/dev/null; then
+    kitty +kitten icat --transfer-mode=file --stdin=no --place="$(($2 - 2))x$(($3 - 4))@${4}x$(($5 + 2))" "$1" </dev/null >/dev/tty
+    exit 69
+  else
+    chafa -s "$(($2 - 2))x$(($3 - 2))" -f symbols "$1"
+  fi
+}
+
+function preview() {
+  [ ! -d "$CACHEDIR" ] && mkdir -p "$CACHEDIR"
+
+  if [ ! -f "${CACHE}.jpg" ]; then
+    case "$1" in
+      video) ffmpegthumbnailer -m -s0 -i "$2" -o "${CACHE}.jpg" ;;
+      pdf) pdftoppm -jpeg -f 1 -singlefile "$2" "$CACHE" ;;
+      office)
+        libreoffice --convert-to jpg "$2" --outdir "$CACHEDIR/${2%/*}" &>/dev/null
+        filename="$(printf "%s" "${2##*/}" | cut -d. -f1)"
+        mv "$CACHEDIR/${2%/*}/$filename.jpg" "$CACHE.jpg"
+        ;;
+    esac
+  fi
+
+  image "${CACHE}.jpg" "$3" "$4" "$5" "$6"
+}
+
+function main() {
+  case "$filetype" in
+    image/*) image "$@" ;;
+    video/*) preview video "$@" ;;
+    *pdf) preview pdf "$@" ;;
+    */*office* | */*document*) preview office "$@" || pistol "$@" ;;
+    *) pistol "$@" ;;
+  esac
+}
+
+main "$@"

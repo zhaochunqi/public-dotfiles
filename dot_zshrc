@@ -1,0 +1,71 @@
+# export LANGUAGE=en_US.UTF-8
+# export LANG=en_US.UTF-8
+# export LC_ALL=en_US.UTF-8
+# export LC_CTYPE=en_US.UTF-8
+
+# This is for zsh history
+HISTSIZE=50000
+SAVEHIST=50000
+HISTFILE=~/.zsh_history
+
+# Nix Config
+if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
+  source $HOME/.nix-profile/etc/profile.d/nix.sh
+fi
+
+# Add .local/bin and .bin to PATH
+# /usr/bin:/bin:/usr/sbin:/usr/local/bin
+export PATH="$HOME/.bin":"$HOME/.cargo/bin":"$HOME/.local/bin":"/usr/local/bin":$PATH
+
+# zplug config
+source ~/.zplug/init.zsh
+
+# From Oh-My-ZSH
+zplug "plugins/git",   from:oh-my-zsh
+zplug "plugins/autojump",   from:oh-my-zsh
+zplug "plugins/aws",   from:oh-my-zsh
+
+# From Github
+zplug "ellie/atuin", defer:2
+zplug "MichaelAquilina/zsh-you-should-use", defer:2
+zplug "fdellwing/zsh-bat", defer:2
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-autosuggestions", defer:2
+zplug "chrissicool/zsh-256color", defer:2
+
+# Local Plugins
+zplug "~/.config/zsh/alias", from:local
+zplug "~/.config/zsh/exa", from:local
+zplug "~/.config/zsh/peco", from:local
+zplug "~/.config/zsh/volta", from:local
+zplug "~/.config/zsh/lf", from:local
+zplug "~/.config/zsh/rye", from:local
+zplug "~/.config/zsh/nvim", from:local
+zplug "~/.config/zsh/asdf", from:local
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+zplug load
+
+# ZSH_AutoSuggestions config
+# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
+
+# Go Settings
+export GOPATH=$HOME/.go
+export PATH=$PATH:$GOPATH/bin
+
+# any nix shell
+# any-nix-shell zsh --info-right | source /dev/stdin
+
+# starship
+eval "$(starship init zsh)"
+
+# direnv
+eval "$(direnv hook zsh)"
+export DIRENV_WARN_TIMEOUT=10s

@@ -1,0 +1,15 @@
+{{- $osid := printf "%s-%s" .chezmoi.arch .chezmoi.os -}}
+{{- if hasKey .chezmoi.osRelease "id" -}}
+{{-   $osid = printf "%s-%s-%s" .chezmoi.arch .chezmoi.os .chezmoi.osRelease.id -}}
+{{- end -}}
+encryption = "age"
+[age]
+	identity = "~/.config/age/keys/key.txt"
+	recipient = "age1ns7nc8ala2a9kpwukpk3hl97suknyffzc0v0p33ttzyxxpucvuwq03qr8s"
+[git]
+	autoCommit = true
+	autoPush = true
+[diff]
+	exclude = ["scripts"]
+[data]
+	osid = {{ $osid | quote }}

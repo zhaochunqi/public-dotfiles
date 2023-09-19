@@ -1,0 +1,47 @@
+[user]
+	email = git@zhaochunqi.com
+	name = Alex Zhao
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
+{{- if eq .chezmoi.os "windows" }}
+[credential]
+	helper = manager-core
+[ghq]
+	root = ~/Developer
+[core]
+	quotepath = false
+	autocrlf = true
+	excludesfile = ~/.gitignore
+[credential "helperselector"]
+	selected = store
+{{- end }}
+{{- if ne .chezmoi.os "windows" }}
+[include]
+	path = ~/.config/delta/themes.gitconfig
+	path = ~/.config/git/work.gitconfig
+	path = ~/.config/git/personal.gitconfig
+[ghq]
+	root = ~/ghq
+[core]
+	quotepath = false
+	autocrlf = input
+	pager = delta
+	excludesfile = ~/.gitignore
+[interactive]
+	diffFilter = delta --color-only --features=interactive
+[delta]
+	features = gruvbox-dark
+	line-number = true
+	side-by-side = true
+[delta "interactive"]
+	keep-plus-minus-markers = false
+{{- end }}
+[alias]
+	plfs = !git -c filter.lfs.smudge= -c filter.lfs.required=false pull && git lfs pull
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

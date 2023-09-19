@@ -1,0 +1,44 @@
+README.md
+.github/
+
+
+{{- if ne .osid "amd64-linux-nixos" }}
+# Only enable this in linux nixos
+.local/share/fcitx5
+.config/espanso
+{{- end}}
+
+{{- if eq .chezmoi.os "windows" }}
+Library
+.config/atuin
+.config/kitty
+.config/nixpkgs
+.config/peco
+.config/tmux
+.config/zsh
+.config/lf
+.aws
+.zshrc
+.zshenv
+.ssh
+.zplug
+.local/share/atuin
+.mc
+{{- end }}
+
+{{- if ne .chezmoi.os "darwin" }}
+Library
+{{- end }}
+
+{{- if ne .chezmoi.os "windows" }}
+AppData
+.config/powershell
+.zplug/cache
+.zplug/log
+.zplug/repos
+.zplug/zcompdump
+mc
+Documents
+{{- end }}
+
+key.txt.age
