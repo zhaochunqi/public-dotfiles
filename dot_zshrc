@@ -72,5 +72,5 @@ eval "$(direnv hook zsh)"
 export DIRENV_WARN_TIMEOUT=10s
 
 # jdk
- export ASDF_DATA_DIR=~/.asdf
-. ~/.asdf/plugins/java/set-java-home.zsh
+# export ASDF_DATA_DIR=~/.asdf
+# . ~/.asdf/plugins/java/set-java-home.zsh
