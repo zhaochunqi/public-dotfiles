@@ -51,7 +51,7 @@
     pkgs.autojump
     pkgs.peco
     pkgs.zsh
-    pkgs.exa
+    pkgs.eza
     pkgs.atuin
     pkgs.ghq
     pkgs.bat
@@ -88,7 +88,7 @@
     pkgs.terraform-ls
     pkgs.tfsec
     pkgs.tflint
-    pkgs.infracost
+    ## pkgs.infracost
     pkgs.pre-commit
     # pkgs.checkov
     pkgs.terraform-docs
@@ -152,6 +152,10 @@
 
     # youtube
     pkgs.yt-dlp
+
+    # asdf dependencies
+    pkgs.rlwrap
+    pkgs.gnupg
   ];
 
   programs.starship = { enable = true; };

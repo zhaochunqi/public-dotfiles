@@ -35,7 +35,7 @@ zplug "chrissicool/zsh-256color", defer:2
 
 # Local Plugins
 zplug "~/.config/zsh/alias", from:local
-zplug "~/.config/zsh/exa", from:local
+zplug "~/.config/zsh/eza", from:local
 zplug "~/.config/zsh/peco", from:local
 #TODO: remove this, cause I'm turing to asdf
 zplug "~/.config/zsh/volta", from:local
