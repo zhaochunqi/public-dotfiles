@@ -69,6 +69,7 @@ eval "$(starship init zsh)"
 eval "$(direnv hook zsh)"
 export DIRENV_WARN_TIMEOUT=10s
 
-# jdk
-# export ASDF_DATA_DIR=~/.asdf
-# . ~/.asdf/plugins/java/set-java-home.zsh
+# ASDF CONFIG
+export ASDF_DATA_DIR=~/.asdf
+. ~/.asdf/plugins/java/set-java-home.zsh
+. ~/.asdf/plugins/golang/set-env.zsh
