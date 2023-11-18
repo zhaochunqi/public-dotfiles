@@ -40,7 +40,7 @@
 {{- end }}
 [alias]
 	plfs = !git -c filter.lfs.smudge= -c filter.lfs.required=false pull && git lfs pull
-  nah = "!f(){ git reset --hard; git clean -xdf; if [ -d ".git/rebase-apply" ] || [ -d ".git/rebase-merge" ]; then git rebase --abort; fi; }; f"
+	nah = "!f(){ git reset --hard; git clean -xdf; if [ -d ".git/rebase-apply" ] || [ -d ".git/rebase-merge" ]; then git rebase --abort; fi; }; f"
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
