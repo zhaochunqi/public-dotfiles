@@ -22,6 +22,10 @@ disabled = true
 [aws]
 force_display = true
 
+[kubernetes]
+# disabled k8s for now.
+disabled = true
+
 [hostname]
 ssh_only = true
 trim_at = ''
