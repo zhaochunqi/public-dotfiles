@@ -1,5 +1,5 @@
 eza_params=(
-  '--git' '--icons' '--classify' '--group'
+  '--git' '--icons=auto' '--classify' '--group'
   '--group-directories-first' '--time-style=long-iso' '--color-scale=all'
 )
 
