@@ -1,6 +1,6 @@
 eza_params=(
   '--git' '--icons' '--classify' '--group'
-  '--group-directories-first' '--time-style=long-iso' '--color-scale'
+  '--group-directories-first' '--time-style=long-iso' '--color-scale=all'
 )
 
 if command -v eza >/dev/null 2>&1; then
