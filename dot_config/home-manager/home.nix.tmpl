@@ -164,7 +164,13 @@
 
   programs.starship = { enable = true; };
   programs.direnv = { enable = true; };
-
+  programs.rbw = {
+      enable = true;
+      settings = {
+        email = "zcq.qiqi@gmail.com";
+        base_url = "https://password.zhaochunqi.com";
+      };
+  };
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
