@@ -147,7 +147,8 @@
     pkgs.kubectl
     pkgs.kubectx
     pkgs.kubecm
-    # pkgs.kubernetes-helm
+    pkgs.kubernetes-helm
+    pkgs.argocd
 
     pkgs.nixfmt
 
@@ -160,6 +161,7 @@
     # asdf dependencies
     pkgs.rlwrap
     pkgs.gnupg
+
   ];
 
   programs.starship = { enable = true; };
