@@ -13,6 +13,7 @@ Library
 .config/atuin
 .config/kitty
 .config/nixpkgs
+.config/ntfy
 .config/peco
 .config/tmux
 .config/zsh
