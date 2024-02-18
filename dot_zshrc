@@ -68,3 +68,6 @@ eval "$(starship init zsh)"
 # direnv
 eval "$(direnv hook zsh)"
 export DIRENV_WARN_TIMEOUT=10s
+
+#zoxide
+eval "$(zoxide init zsh)"
