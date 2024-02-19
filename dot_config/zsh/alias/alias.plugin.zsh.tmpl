@@ -20,7 +20,15 @@ if [[ "$TERM" =~ ^kitty && -z "$ZELLIJ_SESSION_NAME" ]]; then
 fi
 
 alias k=kubectl
-alias kx=kubectx
+
+function kx() {
+    local items=$(kubectx)
+    local selected_context=$(echo $items | fzf --query "$LBUFFER")
+
+    if [ -n "$selected_context" ]; then
+        kubectx $selected_context
+    fi
+}
 
 # yt-dlp
 alias yt="yt-dlp"

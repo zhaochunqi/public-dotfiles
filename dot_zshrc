@@ -22,7 +22,6 @@ source ~/.zplug/init.zsh
 
 # From Oh-My-ZSH
 zplug "plugins/git",   from:oh-my-zsh
-zplug "plugins/autojump",   from:oh-my-zsh
 zplug "plugins/aws",   from:oh-my-zsh
 
 # From Github
@@ -36,7 +35,7 @@ zplug "chrissicool/zsh-256color", defer:2
 # Local Plugins
 zplug "~/.config/zsh/alias", from:local
 zplug "~/.config/zsh/eza", from:local
-zplug "~/.config/zsh/peco", from:local
+zplug "~/.config/zsh/fzf", from:local
 zplug "~/.config/zsh/lf", from:local
 zplug "~/.config/zsh/rye", from:local
 zplug "~/.config/zsh/nvim", from:local
