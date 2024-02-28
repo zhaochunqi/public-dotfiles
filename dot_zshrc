@@ -37,7 +37,6 @@ zplug "~/.config/zsh/alias", from:local
 zplug "~/.config/zsh/eza", from:local
 zplug "~/.config/zsh/fzf", from:local
 zplug "~/.config/zsh/lf", from:local
-zplug "~/.config/zsh/rye", from:local
 zplug "~/.config/zsh/nvim", from:local
 zplug "~/.config/zsh/asdf", from:local
 
