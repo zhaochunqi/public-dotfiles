@@ -69,3 +69,6 @@ export DIRENV_WARN_TIMEOUT=10s
 
 #zoxide
 eval "$(zoxide init zsh)"
+
+#zellij
+eval "$(zellij setup --generate-auto-start zsh)"
