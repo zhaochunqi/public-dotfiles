@@ -39,6 +39,7 @@ zplug "~/.config/zsh/fzf", from:local
 zplug "~/.config/zsh/lf", from:local
 zplug "~/.config/zsh/nvim", from:local
 zplug "~/.config/zsh/asdf", from:local
+# zplug "~/.config/zsh/zellij", from:local
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -69,6 +70,3 @@ export DIRENV_WARN_TIMEOUT=10s
 
 #zoxide
 eval "$(zoxide init zsh)"
-
-#zellij
-eval "$(zellij setup --generate-auto-start zsh)"
