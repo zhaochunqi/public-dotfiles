@@ -36,7 +36,6 @@
     # minio
     pkgs.minio-client
 
-
     pkgs.chezmoi
 
     # for helix
@@ -111,15 +110,15 @@
     # Disable it because it not support M1
     # pkgs.xdg-user-dirs
 
-    # For kitty
-    pkgs.imagemagick
-
     # Containers
     pkgs.skopeo
     pkgs.docker-compose
     pkgs.syft
-    # pkgs.docker
-    # pkgs.colima
+{{- if eq .osid "amd64-darwin" }}
+    pkgs.docker
+    pkgs.colima
+{{- end}}
+
 
     # Lazy
     pkgs.lazygit
