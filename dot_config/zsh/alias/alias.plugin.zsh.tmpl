@@ -4,7 +4,7 @@ alias open="xdg-open"
 {{- end }}
 {{- if eq .chezmoi.os "linux" }}
 {{-   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
-alias logseq_sync="NOTES_FOLDER=/mnt/c/Users/zhaoc/Documents/MyLifeRecorded /home/zhaochunqi/ghq/github.com/zhaochunqi/MyScripts/bashscript/2-git-sync.sh"
+alias logseq_sync="NOTES_FOLDER=/mnt/c/Users/zhaochunqi/ghq/github.com/zhaochunqi/MyLifeRecorded /home/zhaochunqi/ghq/github.com/zhaochunqi/MyScripts/bashscript/2-git-sync.sh"
 alias open="explorer.exe"
 {{-   end }}
 {{- end }}
