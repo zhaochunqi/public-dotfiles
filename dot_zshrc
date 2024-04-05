@@ -61,6 +61,7 @@ export PATH=$PATH:$GOPATH/bin
 
 # any nix shell
 # any-nix-shell zsh --info-right | source /dev/stdin
+source ~/.bw_session
 
 # starship
 eval "$(starship init zsh)"
