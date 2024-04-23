@@ -104,11 +104,11 @@
 
     # Containers
     pkgs.skopeo
-    pkgs.docker-compose
+    # pkgs.docker-compose
     pkgs.syft
 {{- if eq .osid "amd64-darwin" }}
-    pkgs.docker
-    pkgs.colima
+    # pkgs.docker
+    # pkgs.colima
 {{- end}}
 
     # Lazy
