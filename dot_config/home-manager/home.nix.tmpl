@@ -84,7 +84,7 @@
     pkgs.tflint
     pkgs.infracost
     pkgs.pre-commit
-    pkgs.checkov
+    # pkgs.checkov
     pkgs.terraform-docs
     pkgs.terrascan
     pkgs.tfupdate
@@ -104,11 +104,11 @@
 
     # Containers
     pkgs.skopeo
-    # pkgs.docker-compose
+    pkgs.docker-compose
     pkgs.syft
 {{- if eq .osid "amd64-darwin" }}
-    # pkgs.docker
-    # pkgs.colima
+    pkgs.docker
+    pkgs.colima
 {{- end}}
 
     # Lazy
