@@ -62,7 +62,8 @@
     pkgs.viddy
     pkgs.delta
     pkgs.git-lfs
-    pkgs.jq
+    # pkgs.jq
+    pkgs.yq
 
     # Needed by astrovim
     pkgs.tree-sitter
@@ -109,6 +110,13 @@
 {{- if eq .osid "amd64-darwin" }}
     # pkgs.docker
     # pkgs.colima
+{{- end}}
+
+{{- if eq .chezmoi.os "darwin" }}
+    # ASDF PHP required
+    pkgs.imagemagic
+    pkgs.libsodium
+    pkgs.gmp
 {{- end}}
 
     # Lazy
