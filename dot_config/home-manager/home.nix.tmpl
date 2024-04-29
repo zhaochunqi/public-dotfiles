@@ -71,9 +71,6 @@
     pkgs.bottom
 
     # Luna Vim Dependencies
-    # pkgs.nodejs
-    # pkgs.nodePackages.pnpm
-    # pkgs.nodePackages.neovim
     pkgs.cargo
     pkgs.gcc
 
@@ -110,13 +107,6 @@
 {{- if eq .osid "amd64-darwin" }}
     # pkgs.docker
     # pkgs.colima
-{{- end}}
-
-{{- if eq .chezmoi.os "darwin" }}
-    # ASDF PHP required
-    pkgs.imagemagick
-    pkgs.libsodium
-    pkgs.gmp
 {{- end}}
 
     # Lazy
