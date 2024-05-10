@@ -13,6 +13,8 @@ alias open="explorer.exe"
 alias logseq_sync="NOTES_FOLDER={{.chezmoi.homeDir }}/ghq/github.com/zhaochunqi/MyLifeRecorded {{ .chezmoi.homeDir }}/ghq/github.com/zhaochunqi/MyScripts/bashscript/2-git-sync.sh"
 {{- end }}
 
+alias logseq_youtube_timestamp="{{ .chezmoi.homeDir }}/ghq/github.com/zhaochunqi/MyScripts/bashscript/9-youtube-logseq-timestamp.sh"
+
 if [[ "$TERM" =~ ^kitty && -z "$ZELLIJ_SESSION_NAME" ]]; then 
     ssh() { 
         kitty +kitten ssh "$@" 
