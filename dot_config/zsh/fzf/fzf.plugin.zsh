@@ -1,25 +1,8 @@
 # fzf_settings
 typeset -gx -u _fzf_projects_folder
 
-_fzf_projects_folder=(
-  "$HOME/Developer"
-)
-
 function _fzf-change-directory() {
   local items=$(ghq list -p)
-
-  for cpath in "${_fzf_projects_folder[@]}"; do
-    if [ ! -d "$cpath" ]; then
-      continue
-    fi
-
-    if [ -z "$(command ls -A $cpath)" ]; then
-      continue
-    fi
-
-    items="$items\n"
-    items+=$(command ls -ad $cpath/* | grep -v \.git)
-  done
 
   items="$items\n$(chezmoi source-path)"
 
