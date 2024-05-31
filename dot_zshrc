@@ -38,6 +38,8 @@ zplug "~/.config/zsh/eza", from:local
 zplug "~/.config/zsh/fzf", from:local
 zplug "~/.config/zsh/lf", from:local
 zplug "~/.config/zsh/nvim", from:local
+# asdf settings
+# Currently Java and Golang
 zplug "~/.config/zsh/asdf", from:local
 zplug "~/.config/zsh/android", from:local
 zplug "~/.config/zsh/tmux", from:local
@@ -55,10 +57,6 @@ zplug load
 
 # ZSH_AutoSuggestions config
 # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
-
-# Go Settings
-export GOPATH=$HOME/.go
-export PATH=$PATH:$GOPATH/bin
 
 # any nix shell
 # any-nix-shell zsh --info-right | source /dev/stdin
