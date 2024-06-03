@@ -65,6 +65,7 @@ source ~/.bw_session
 # aichat config
 export AICHAT_CONFIG_DIR="$HOME/.config/aichat"
 export AICHAT_ROLES_FILE="$HOME/.config/aichat/roles.yaml"
+export GROQ_API_KEY=$(bw get password 077aa359-1c31-44b8-b1b5-bb37ccb0aba6)
 
 # starship
 eval "$(starship init zsh)"
