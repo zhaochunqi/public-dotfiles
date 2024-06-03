@@ -62,6 +62,10 @@ zplug load
 # any-nix-shell zsh --info-right | source /dev/stdin
 source ~/.bw_session
 
+# aichat config
+export AICHAT_CONFIG_DIR="$HOME/.config/aichat"
+export AICHAT_ROLES_FILE="$HOME/.config/aichat/roles.yaml"
+
 # starship
 eval "$(starship init zsh)"
 
