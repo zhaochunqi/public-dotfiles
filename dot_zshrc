@@ -38,9 +38,9 @@ zplug "~/.config/zsh/eza", from:local
 zplug "~/.config/zsh/fzf", from:local
 zplug "~/.config/zsh/lf", from:local
 zplug "~/.config/zsh/nvim", from:local
-# asdf settings
+zplug "~/.config/zsh/mise", from:local
+
 # Currently Java and Golang
-#zplug "~/.config/zsh/asdf", from:local
 zplug "~/.config/zsh/android", from:local
 zplug "~/.config/zsh/tmux", from:local
 # zplug "~/.config/zsh/zellij", from:local
@@ -60,12 +60,11 @@ zplug load
 
 # any nix shell
 # any-nix-shell zsh --info-right | source /dev/stdin
-source ~/.bw_session
 
 # aichat config
 export AICHAT_CONFIG_DIR="$HOME/.config/aichat"
 export AICHAT_ROLES_FILE="$HOME/.config/aichat/roles.yaml"
-export GROQ_API_KEY=$(bw get password 077aa359-1c31-44b8-b1b5-bb37ccb0aba6)
+export GROQ_API_KEY="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"
 
 # starship
 eval "$(starship init zsh)"
