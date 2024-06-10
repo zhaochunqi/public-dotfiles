@@ -21,9 +21,6 @@
     # basic
     pkgs.git
 
-    # password (currently using nodejs install instead)
-    # pkgs.bitwarden-cli
-
     # folder management
     pkgs.yazi
 
@@ -31,10 +28,6 @@
     pkgs.minio-client
 
     pkgs.chezmoi
-
-    # for helix
-    pkgs.helix
-    pkgs.nil
 
     pkgs.neovim
     pkgs.unzip
@@ -60,18 +53,7 @@
     pkgs.jq
     pkgs.yq
 
-    # Needed by astrovim
-    pkgs.tree-sitter
-    pkgs.gdu
-    pkgs.bottom
-
-    # Luna Vim Dependencies
-    pkgs.cargo
-    pkgs.gcc
-
     # Terraform
-    ## pkgs.terragrunt
-    ## pkgs.terraform
     pkgs.terraform-ls
     pkgs.tfsec
     pkgs.tflint
@@ -84,25 +66,15 @@
     pkgs.hcledit
 
     # AWS
-    # pkgs.awscli
-    # pkgs.python3
     pkgs.awscli2
     pkgs.ssm-session-manager-plugin
 
     # Lua
     pkgs.lua
 
-    # Disable it because it not support M1
-    # pkgs.xdg-user-dirs
-
     # Containers
     pkgs.skopeo
     pkgs.syft
-{{- if eq .osid "amd64-darwin" }}
-    # For xiaoken
-    # pkgs.docker
-    # pkgs.colima
-{{- end}}
 {{- if eq .osid "arm64-darwin" }}
     # For xiaopei
     pkgs.aichat
@@ -112,18 +84,7 @@
     pkgs.lazygit
     pkgs.lazydocker
 
-    pkgs.ansible
-
-    # shell record
-    pkgs.asciinema
-
     pkgs.zellij
-
-    # needed by nvim 
-    pkgs.fd
-
-    # p7zip
-    pkgs.p7zip
 
     # k8s
     pkgs.kubectl
@@ -131,8 +92,6 @@
     pkgs.kubecm
     pkgs.kubernetes-helm
     pkgs.argocd
-
-    pkgs.nixfmt
 
     # youtube
     pkgs.yt-dlp
