@@ -63,7 +63,12 @@ zplug load
 # aichat config
 export AICHAT_CONFIG_DIR="$HOME/.config/aichat"
 export AICHAT_ROLES_FILE="$HOME/.config/aichat/roles.yaml"
-export GROQ_API_KEY="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"
+
+# for secret shells
+# check if ~/.zsh_secrets exists
+if [ -e ~/.zsh_secrets ]; then
+  source ~/.zsh_secrets
+fi
 
 # mise
 eval "$(mise activate zsh)"
