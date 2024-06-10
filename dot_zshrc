@@ -38,7 +38,6 @@ zplug "~/.config/zsh/eza", from:local
 zplug "~/.config/zsh/fzf", from:local
 zplug "~/.config/zsh/lf", from:local
 zplug "~/.config/zsh/nvim", from:local
-zplug "~/.config/zsh/mise", from:local
 
 # Currently Java and Golang
 zplug "~/.config/zsh/android", from:local
@@ -65,6 +64,9 @@ zplug load
 export AICHAT_CONFIG_DIR="$HOME/.config/aichat"
 export AICHAT_ROLES_FILE="$HOME/.config/aichat/roles.yaml"
 export GROQ_API_KEY="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"
+
+# mise
+eval "$(mise activate zsh)"
 
 # starship
 eval "$(starship init zsh)"
