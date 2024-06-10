@@ -40,7 +40,7 @@ zplug "~/.config/zsh/lf", from:local
 zplug "~/.config/zsh/nvim", from:local
 # asdf settings
 # Currently Java and Golang
-zplug "~/.config/zsh/asdf", from:local
+#zplug "~/.config/zsh/asdf", from:local
 zplug "~/.config/zsh/android", from:local
 zplug "~/.config/zsh/tmux", from:local
 # zplug "~/.config/zsh/zellij", from:local
