@@ -66,6 +66,9 @@ export GOPATH=$HOME/.go
 export AICHAT_CONFIG_DIR="$HOME/.config/aichat"
 export AICHAT_ROLES_FILE="$HOME/.config/aichat/roles.yaml"
 
+# tmuxifier
+export PATH="$HOME/.tmuxifier/bin:$PATH"
+
 # for secret shells
 # check if ~/.zsh_secrets exists
 if [ -e ~/.zsh_secrets ]; then
