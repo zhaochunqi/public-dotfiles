@@ -53,6 +53,9 @@ fi
 
 zplug load
 
+# set up gopath
+export GOPATH=$HOME/.go
+
 # ZSH_AutoSuggestions config
 # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
 
