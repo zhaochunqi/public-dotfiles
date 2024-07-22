@@ -11,7 +11,7 @@ alias open="explorer.exe"
 
 {{- if eq .chezmoi.os "darwin" }}
 alias logseq_sync="NOTES_FOLDER={{.chezmoi.homeDir }}/ghq/github.com/zhaochunqi/MyLifeRecorded {{ .chezmoi.homeDir }}/ghq/github.com/zhaochunqi/MyScripts/bashscript/2-git-sync.sh"
-alias compress_image='python {{.chezmoi.homeDir }}ghq/github.com/zhaochunqi/MyScripts/python/3-compress-images.py'
+alias compress_image='python {{.chezmoi.homeDir }}/ghq/github.com/zhaochunqi/MyScripts/python/3-compress-images.py'
 {{- end }}
 
 alias logseq_youtube_timestamp="{{ .chezmoi.homeDir }}/ghq/github.com/zhaochunqi/MyScripts/bashscript/9-youube-logseq-timestamp.sh"
