@@ -30,7 +30,6 @@
     pkgs.chezmoi
 
     # Editor
-    pkgs.helix
     pkgs.neovim
     pkgs.unzip
     pkgs.file
@@ -92,6 +91,14 @@
     pkgs.mozjpeg
 {{- end}}
 
+{{- if eq .chezmoi.os "darwin" }}
+    # use mise to replace asdf
+    pkgs.mise
+
+    # devbox
+    pkgs.devbox
+{{- end}}
+
     # Lazy
     pkgs.lazygit
     pkgs.lazydocker
@@ -117,15 +124,10 @@
     # pkgs.xz
     # pkgs.readline
 
-    # use mise to replace asdf
-    pkgs.mise
     pkgs.gnupg
 
     # localhost
     # pkgs.ngrok
-
-    # devbox
-    pkgs.devbox
 
     # bitwarden
     pkgs.rbw
