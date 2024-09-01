@@ -38,6 +38,7 @@ zplug "~/.config/zsh/eza", from:local
 zplug "~/.config/zsh/fzf", from:local
 zplug "~/.config/zsh/nvim", from:local
 zplug "~/.config/zsh/git", from:local
+zplug "~/.config/zsh/mise", from:local
 
 # Currently Java and Golang
 zplug "~/.config/zsh/android", from:local
@@ -76,9 +77,6 @@ export PATH="$HOME/.tmuxifier/bin:$PATH"
 if [ -e ~/.zsh_secrets ]; then
   source ~/.zsh_secrets
 fi
-
-# mise
-eval "$(mise activate zsh)"
 
 # starship
 eval "$(starship init zsh)"
