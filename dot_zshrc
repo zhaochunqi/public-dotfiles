@@ -39,6 +39,7 @@ zplug "~/.config/zsh/fzf", from:local
 zplug "~/.config/zsh/nvim", from:local
 zplug "~/.config/zsh/git", from:local
 zplug "~/.config/zsh/mise", from:local
+zplug "~/.config/zsh/rancher", from:local
 zplug "~/.config/zsh/just", from:local
 
 # Currently Java and Golang
