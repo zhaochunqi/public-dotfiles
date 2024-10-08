@@ -1,4 +1,4 @@
 # Load command
-if command -v rdctl&> /dev/null; then
+if [ -d ~/.rd/bin ]; then
     export PATH="~/.rd/bin:$PATH"
 fi
