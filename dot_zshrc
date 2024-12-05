@@ -44,8 +44,6 @@ zplug "~/.config/zsh/just", from:local
 
 # Currently Java and Golang
 zplug "~/.config/zsh/android", from:local
-zplug "~/.config/zsh/tmux", from:local
-# zplug "~/.config/zsh/zellij", from:local
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -70,9 +68,6 @@ export GOPATH=$HOME/.go
 # aichat config
 export AICHAT_CONFIG_DIR="$HOME/.config/aichat"
 export AICHAT_ROLES_FILE="$HOME/.config/aichat/roles.yaml"
-
-# tmuxifier
-export PATH="$HOME/.tmuxifier/bin:$PATH"
 
 # for secret shells
 # check if ~/.zsh_secrets exists
