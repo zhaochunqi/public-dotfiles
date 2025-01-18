@@ -98,7 +98,7 @@
 
 {{- if eq .chezmoi.os "darwin" }}
     # use mise to replace asdf
-    # pkgs.mise
+    pkgs.mise
 
     # devbox
     pkgs.devbox
@@ -139,7 +139,6 @@
     pkgs.just
   ];
 
-  programs.fish = { enable = true; };
   programs.starship = { enable = true; };
   programs.direnv = { enable = true; };
 
